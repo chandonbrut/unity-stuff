@@ -29,8 +29,7 @@ public class PathDefinition : MonoBehaviour {
 
         }
 
-
-        throw new System.NotImplementedException();
+        // throw new System.NotImplementedException();
     }
 
     public void OnDrawGizmos()
@@ -39,9 +38,9 @@ public class PathDefinition : MonoBehaviour {
 
         var points = Points.Where(tag => tag != null).ToList();
 
-        for (var i=1; i < Points.Length; i++)
+        for (var i=1; i < points.Count; i++)
         {
-            Gizmos.DrawLine(Points[i - 1].position, Points[i].position);
+            Gizmos.DrawLine(Points[i - 1].position, points[i].position);
         }
     }
 

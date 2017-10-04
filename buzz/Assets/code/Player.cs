@@ -12,8 +12,9 @@ public class Player : MonoBehaviour {
     public float SpeedAccelerationOnGround = 10f;
     public float SpeedAccelerationInAir = 5f;
 
+    public bool IsDead { get; private set; }
 
-    public void Start()
+    public void Awake()
     {
         _controller = GetComponent<CharacterController2D>();
 
@@ -25,12 +26,33 @@ public class Player : MonoBehaviour {
     // Called every frame
     public void Update()
     {
-        HandleInput();
+        if (!IsDead) HandleInput();
 
         var movementFactor = _controller.State.IsGrounded ? SpeedAccelerationOnGround : SpeedAccelerationInAir;
         
         _controller.SetHorizontalForce(Mathf.Lerp(_controller.Velocity.x, _normalizedHorizontalSpeed * MaxSpeed, Time.deltaTime * movementFactor));
 
+    }
+
+    public void Kill()
+    {
+        _controller.HandleCollisions = false;
+        GetComponent<Collider2D>().enabled = false;
+
+        _controller.SetHorizontalForce(0);
+        _normalizedHorizontalSpeed = 0;
+        _controller.SetVerticalForce(_controller.Parameters.Gravity * -0.4f);
+        IsDead = true;
+    }
+
+    public void RespawnAt(Transform spawnPoint)
+    {
+        if (!_isFacingRight) Flip();
+
+        IsDead = false;
+        _controller.HandleCollisions = true;
+        GetComponent<Collider2D>().enabled = true;
+        transform.position = spawnPoint.position;
     }
 
     private void HandleInput()

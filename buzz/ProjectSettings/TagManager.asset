@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Platforms
-  - 
+  - Ignore
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Background
     uniqueID: 1146430861
     locked: 1
+  - name: FarAwayMountains
+    uniqueID: 1875988379
+    locked: 0
   - name: Mountains
     uniqueID: 2299954787
     locked: 1
@@ -49,6 +52,9 @@ TagManager:
     locked: 1
   - name: Foreground
     uniqueID: 155540391
+    locked: 0
+  - name: Particles
+    uniqueID: 925762637
     locked: 0
   - name: Player
     uniqueID: 2178951517
