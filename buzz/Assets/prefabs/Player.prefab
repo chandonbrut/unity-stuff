@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4327175276576308}
   - component: {fileID: 212750608068372040}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: right_eye_white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4420129804630940}
   - component: {fileID: 212217493519282656}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: left_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,23 @@ GameObject:
   m_Component:
   - component: {fileID: 4258758067676612}
   - component: {fileID: 212259755205002026}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: right_foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1290895244505924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4870963949949100}
+  m_Layer: 13
+  m_Name: projectile source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4626931562842006}
   - component: {fileID: 212246240625520816}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482687497876434}
   - component: {fileID: 212865445302955008}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: left_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873299586217958}
   - component: {fileID: 212585537027084866}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: left_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +133,7 @@ GameObject:
   - component: {fileID: 198878236871620440}
   - component: {fileID: 199732856707157026}
   - component: {fileID: 114439298492699758}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482697808357698}
   - component: {fileID: 212185606735122308}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: right_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +168,7 @@ GameObject:
   - component: {fileID: 114327430806192164}
   - component: {fileID: 61310634394933440}
   - component: {fileID: 50585504316076426}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4171714883487510}
   - component: {fileID: 212804656851921344}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: left_eye_white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4936765563396158}
   - component: {fileID: 212245894714190000}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: right_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +318,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754003661981220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.14, y: 8.99, z: 0}
+  m_LocalPosition: {x: 0.16, y: 9.73, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4626931562842006}
@@ -316,8 +331,22 @@ Transform:
   - {fileID: 4420129804630940}
   - {fileID: 4936765563396158}
   - {fileID: 4373950841255578}
+  - {fileID: 4870963949949100}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4870963949949100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1290895244505924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.11, y: -0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4821155552115598}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4873299586217958
 Transform:
@@ -354,7 +383,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1754003661981220}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -403,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatformMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   DefaultParameters:
     MaxVelocity: {x: 3.4028235e+38, y: 3.4028235e+38}
     SlopeLimit: 30
@@ -435,8 +464,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 8
+  MaxHealth: 100
   SpeedAccelerationOnGround: 10
   SpeedAccelerationInAir: 5
+  OuchEffect: {fileID: 1816462126020092, guid: ab1aae2b5a0d3714f86f208c3200f029, type: 2}
+  ProjectileFireLocation: {fileID: 4870963949949100}
+  Projectile: {fileID: 114218879967366330, guid: de47430dc0748a24ca8ddf0db4a186fa,
+    type: 2}
+  FireRate: 0.4
 --- !u!198 &198878236871620440
 ParticleSystem:
   m_ObjectHideFlags: 1

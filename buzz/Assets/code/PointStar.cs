@@ -5,7 +5,6 @@ public class PointStar : MonoBehaviour, IPlayerRespawnListener
 {
 
     public GameObject Effect;
-    public int PointsToAdd = 10;
 
     public void OnPlayerRespawnInThisCheckpoint(Checkpoint checkpoint, Player player)
     {
@@ -17,11 +16,12 @@ public class PointStar : MonoBehaviour, IPlayerRespawnListener
         if (other.GetComponent<Player>() == null)
             return;
 
-        GameManager.Instance.AddPoints(PointsToAdd);
-
         Instantiate(Effect, transform.position, transform.rotation);
-
         gameObject.SetActive(false);
+
+        var awarder = gameObject.GetComponent<AwardPoints>();
+        if (awarder != null) awarder.AwardPointsCo();        
+
     }
     
 }

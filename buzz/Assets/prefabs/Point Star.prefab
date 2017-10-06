@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4814279831192118}
   - component: {fileID: 114523508383888488}
   - component: {fileID: 58795335657487556}
+  - component: {fileID: 114760183603335570}
   m_Layer: 0
   m_Name: Point Star
   m_TagString: Untagged
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Effect: {fileID: 1825786372536380, guid: df1cc57effe3e65409e87f1287a7ef9a, type: 2}
   PointsToAdd: 10
+--- !u!114 &114760183603335570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615173335609006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37e6726a31f5614db3d94e5b2809c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RescaleRatio: 6
+  Delta: 0.0001
 --- !u!212 &212308515117446444
 SpriteRenderer:
   m_ObjectHideFlags: 1

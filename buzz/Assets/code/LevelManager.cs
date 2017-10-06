@@ -42,6 +42,27 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(KillPlayerCo());
     }
 
+    public void Restart()
+    {
+        StartCoroutine(RestartCo());
+    }
+
+    private IEnumerator RestartCo()
+    {
+        Player.Kill();
+        Camera.IsFollowing = false;
+        yield return new WaitForSeconds(2f);
+
+        Camera.IsFollowing = true;
+
+        _currentCheckpointIndex = 0;
+
+        _checkpoints[_currentCheckpointIndex].SpawnPlayer(Player);
+
+        _started = DateTime.UtcNow;
+        GameManager.Instance.ResetPoints(0);
+    }
+
     private IEnumerator KillPlayerCo()
     {
         Player.Kill();

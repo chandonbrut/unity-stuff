@@ -81,24 +81,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\code\AutoDestroyParticleSystem.cs" />
+    <Compile Include="Assets\code\AwardPoints.cs" />
     <Compile Include="Assets\code\BackgroundParallax.cs" />
     <Compile Include="Assets\code\CameraController2D.cs" />
+    <Compile Include="Assets\code\CenteredTextPositioner.cs" />
     <Compile Include="Assets\code\CharacterController2D.cs" />
     <Compile Include="Assets\code\Checkpoint.cs" />
     <Compile Include="Assets\code\ControllerParameters2D.cs" />
     <Compile Include="Assets\code\ControllerPhysicsVolume2D.cs" />
     <Compile Include="Assets\code\ControllerState2D.cs" />
+    <Compile Include="Assets\code\DamagePlayer.cs" />
+    <Compile Include="Assets\code\FloatingText.cs" />
+    <Compile Include="Assets\code\FollowObject.cs" />
     <Compile Include="Assets\code\FollowPath.cs" />
+    <Compile Include="Assets\code\FromWorldPointTextPositioner.cs" />
     <Compile Include="Assets\code\GameHUD.cs" />
     <Compile Include="Assets\code\GameManager.cs" />
+    <Compile Include="Assets\code\HealthBar.cs" />
+    <Compile Include="Assets\code\IFloatingTextPositioner.cs" />
     <Compile Include="Assets\code\Instakill.cs" />
     <Compile Include="Assets\code\IPlayerRespawnListener.cs" />
+    <Compile Include="Assets\code\ITakeDamage.cs" />
     <Compile Include="Assets\code\JumpPlatform.cs" />
     <Compile Include="Assets\code\LevelManager.cs" />
     <Compile Include="Assets\code\ParticleSystemController.cs" />
     <Compile Include="Assets\code\PathDefinition.cs" />
+    <Compile Include="Assets\code\PathedProjectile.cs" />
+    <Compile Include="Assets\code\PathedProjectileSpawner.cs" />
     <Compile Include="Assets\code\Player.cs" />
     <Compile Include="Assets\code\PointStar.cs" />
+    <Compile Include="Assets\code\Projectile.cs" />
+    <Compile Include="Assets\code\PulsateEffect.cs" />
+    <Compile Include="Assets\code\RotateEffect.cs" />
+    <Compile Include="Assets\code\SimpleEnemyAI.cs" />
+    <Compile Include="Assets\code\SimpleProjectile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
