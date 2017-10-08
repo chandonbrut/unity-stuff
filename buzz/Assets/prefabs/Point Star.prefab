@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Effect: {fileID: 1825786372536380, guid: df1cc57effe3e65409e87f1287a7ef9a, type: 2}
-  PointsToAdd: 10
 --- !u!114 &114760183603335570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,8 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37e6726a31f5614db3d94e5b2809c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RescaleRatio: 6
-  Delta: 0.0001
+  RescaleRatio: 26
 --- !u!212 &212308515117446444
 SpriteRenderer:
   m_ObjectHideFlags: 1

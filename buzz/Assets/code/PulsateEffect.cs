@@ -9,7 +9,7 @@ public class PulsateEffect : MonoBehaviour
 
     private float _delta;
 
-    private float _originalScale;
+    private Vector3 _originalScale;
     
     private int _direction = 1;
     private float _scaleUpperLimit;
@@ -19,34 +19,17 @@ public class PulsateEffect : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _originalScale = gameObject.transform.localScale.x;
-        _delta = 0.1f ;
-        _scaleUpperLimit = _originalScale + ( RescaleRatio / 100f );
-        _scaleLowerLimit = _originalScale - ( RescaleRatio / 100f );
-
+        _originalScale = gameObject.transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var currentScale = (_direction == 1) ? new Vector3(gameObject.transform.localScale.x + _delta, gameObject.transform.localScale.x + _delta, 0) : new Vector3(gameObject.transform.localScale.x - _delta, gameObject.transform.localScale.x - _delta, 0);
 
-        if (currentScale.x >= _scaleUpperLimit)
-        {
-            currentScale.x = _scaleUpperLimit;
-            currentScale.y = _scaleUpperLimit;
-            _direction = -1;        
-        }
-
-        if (currentScale.x <= _scaleLowerLimit)
-        {
-            currentScale.x = _scaleLowerLimit;
-            currentScale.y = _scaleLowerLimit;
-            _direction = 1;            
-        }
-
-        gameObject.transform.localScale = currentScale;
-
+        var scale = Mathf.Abs((Time.time % 4) - 2) + 1;
+        var currentScale = new Vector3(scale * (RescaleRatio/100f), scale * (RescaleRatio/100f), 0);
+        gameObject.transform.localScale = _originalScale + currentScale;
+        
     }
     
 }
