@@ -7,6 +7,9 @@ public class PathedProjectileSpawner : MonoBehaviour
     public Transform Destination;
     public PathedProjectile Projectile;
     public GameObject SpawnEffect;
+    public AudioClip SpawnSound;
+
+    public Animator Animator;
 
     public float Speed;
     public float FireRate;
@@ -28,7 +31,10 @@ public class PathedProjectileSpawner : MonoBehaviour
         var projectile = (PathedProjectile)Instantiate(Projectile, transform.position, transform.rotation);
         projectile.Initialize(Destination, Speed);
 
+        if (Animator != null) Animator.SetTrigger("Fire");
         if (SpawnEffect != null) Instantiate(SpawnEffect, transform.position, transform.rotation);
+        if (SpawnSound != null) AudioSource.PlayClipAtPoint(SpawnSound, transform.position);
+
     }
 
     public void OnDrawGizmos()

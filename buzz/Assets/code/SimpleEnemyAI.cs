@@ -8,6 +8,7 @@ public class SimpleEnemyAI : MonoBehaviour, ITakeDamage, IPlayerRespawnListener
     public float FireRate = 1;
     public Projectile Projectile;
     public GameObject DestroyedEffect;
+    public AudioClip KilledSound;
 
     private CharacterController2D _controller;
     private Vector2 _direction;
@@ -24,8 +25,9 @@ public class SimpleEnemyAI : MonoBehaviour, ITakeDamage, IPlayerRespawnListener
 
     public void TakeDamage(int damage, GameObject instigator)
     {
-        Instantiate(DestroyedEffect);
-        DestroyedEffect.transform.position = gameObject.transform.position;
+        AudioSource.PlayClipAtPoint(KilledSound, transform.position);
+        Instantiate(DestroyedEffect,transform.position,transform.rotation);
+        Debug.Log("Destroying!");
         gameObject.SetActive(false);
 
         var awarder = gameObject.GetComponent<AwardPoints>();

@@ -11,9 +11,6 @@ public class PulsateEffect : MonoBehaviour
 
     private Vector3 _originalScale;
     
-    private int _direction = 1;
-    private float _scaleUpperLimit;
-    private float _scaleLowerLimit;
 
 
     // Use this for initialization

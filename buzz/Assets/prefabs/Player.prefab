@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 114327430806192164}
   - component: {fileID: 61310634394933440}
   - component: {fileID: 50585504316076426}
+  - component: {fileID: 114757688622205154}
   m_Layer: 13
   m_Name: Player
   m_TagString: Untagged
@@ -318,7 +319,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754003661981220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 9.73, z: 0}
+  m_LocalPosition: {x: 10.5, y: 9.6, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4626931562842006}
@@ -452,6 +453,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerName: Particles
+--- !u!114 &114757688622205154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754003661981220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8049417fa5069884dbdda36a587a8948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bounds: {fileID: 0}
+  Above: 0
+  Below: 2
+  Left: 1
+  Right: 1
 --- !u!114 &114966282010202544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,11 +484,16 @@ MonoBehaviour:
   MaxHealth: 100
   SpeedAccelerationOnGround: 10
   SpeedAccelerationInAir: 5
-  OuchEffect: {fileID: 1816462126020092, guid: ab1aae2b5a0d3714f86f208c3200f029, type: 2}
+  OuchEffect: {fileID: 1702463798286968, guid: 91fefe3e857cf1d4fab6184d44574e21, type: 2}
   ProjectileFireLocation: {fileID: 4870963949949100}
   Projectile: {fileID: 114218879967366330, guid: de47430dc0748a24ca8ddf0db4a186fa,
     type: 2}
   FireRate: 0.4
+  PlayerHealSound: {fileID: 8300000, guid: 49e0433e722134c4f8decc18372cfe7c, type: 3}
+  JumpSound: {fileID: 8300000, guid: d1a9b6a4581499f4693af25c8fde9cc1, type: 3}
+  DeathSound: {fileID: 8300000, guid: 02d8e5cee1a099449bebd1165c98ed0d, type: 3}
+  PlayerHitSound: {fileID: 8300000, guid: 889d95d14b622db4b879221d37e789a0, type: 3}
+  PlayerShootSound: {fileID: 8300000, guid: cafbda6d50f9f8244bbcf0eff7178d57, type: 3}
 --- !u!198 &198878236871620440
 ParticleSystem:
   m_ObjectHideFlags: 1

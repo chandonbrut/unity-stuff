@@ -22,6 +22,12 @@ public class Player : MonoBehaviour {
     public Projectile Projectile;
     public float FireRate;
 
+    public AudioClip PlayerHealSound;
+    public AudioClip JumpSound;
+    public AudioClip DeathSound;
+    public AudioClip PlayerHitSound;
+    public AudioClip PlayerShootSound;
+
     private float _canFireIn;
 
     public void Awake()
@@ -48,8 +54,20 @@ public class Player : MonoBehaviour {
 
     }
 
+    public void GiveHealth(float health, GameObject giver)
+    {
+
+        AudioSource.PlayClipAtPoint(PlayerHealSound, transform.position);
+        Health =  Mathf.Min(MaxHealth,health+Health);
+
+        FloatingText.Show(string.Format("+{0}", health), "HealthText", new FromWorldPointTextPositioner(Camera.main, (transform.position + new Vector3(0, 4, 0)), 2f, 50f));
+
+    }
+
     public void TakeDamage(float damage)
     {
+
+        AudioSource.PlayClipAtPoint(PlayerHitSound, transform.position);
         Instantiate(OuchEffect, transform.position, transform.rotation);
         Health -= damage;
 
@@ -59,8 +77,17 @@ public class Player : MonoBehaviour {
         if (Health <= 0) LevelManager.Instance.KillPlayer();
     }
 
+    public void FinishLevel()
+    {
+
+        enabled = false;
+        _controller.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+    }
+
     public void Kill()
     {
+        AudioSource.PlayClipAtPoint(DeathSound, transform.position);
         _controller.HandleCollisions = false;
         GetComponent<Collider2D>().enabled = false;
 
@@ -80,6 +107,19 @@ public class Player : MonoBehaviour {
         GetComponent<Collider2D>().enabled = true;
         transform.position = spawnPoint.position;
         Health = MaxHealth;
+    }
+
+    private void Jump()
+    {
+
+        if (_controller.CanJump)
+        {
+            AudioSource.PlayClipAtPoint(JumpSound, transform.position);
+            _controller.Jump();
+        }
+        else
+            Debug.Log("Can't jump... " + _controller.State);
+
     }
 
     private void HandleInput()
@@ -107,10 +147,8 @@ public class Player : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if (_controller.CanJump)
-                _controller.Jump();
-            else
-                Debug.Log("Can't jump... " + _controller.State);
+            Jump();
+            
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -129,6 +167,8 @@ public class Player : MonoBehaviour {
         if (_canFireIn > 0) return;
 
         var direction = _isFacingRight ? Vector2.right : Vector2.left;
+        AudioSource.PlayClipAtPoint(PlayerShootSound, transform.position);
+
         var projectile = (Projectile)Instantiate(Projectile, ProjectileFireLocation.position, ProjectileFireLocation.rotation);
         projectile.Initialize(gameObject, direction, _controller.Velocity);
 

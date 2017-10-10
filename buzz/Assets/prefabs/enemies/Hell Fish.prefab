@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 1608987974610168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4074383770814270}
   m_RootOrder: 0
@@ -164,12 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e220995c82a83df45bb06fdd5dd155c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 5
   FireRate: 1
   Projectile: {fileID: 114180553444800428, guid: a3cbdd7e1198e2a448dde7b1a2af243e,
     type: 2}
-  DestroyedEffect: {fileID: 1816462126020092, guid: ab1aae2b5a0d3714f86f208c3200f029,
+  DestroyedEffect: {fileID: 1702463798286968, guid: 91fefe3e857cf1d4fab6184d44574e21,
     type: 2}
+  KilledSound: {fileID: 8300000, guid: b63e8a71993e90442bbb4588c48631fb, type: 3}
 --- !u!114 &114720131399799452
 MonoBehaviour:
   m_ObjectHideFlags: 1

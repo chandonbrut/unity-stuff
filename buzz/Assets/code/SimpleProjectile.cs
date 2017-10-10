@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
-using UnityEditor;
 
 public class SimpleProjectile : Projectile, ITakeDamage
 {
     public int Damage;
     public GameObject DestroyedEffect;
+    public AudioClip DestroySound;
     public float TimeToLive;
 
     private void DestroyProjectile()
     {
         if (DestroyedEffect != null) Instantiate(DestroyedEffect, transform.position, transform.rotation);
+        if (DestroySound != null) AudioSource.PlayClipAtPoint(DestroySound, transform.position);
 
         Destroy(gameObject);
     }

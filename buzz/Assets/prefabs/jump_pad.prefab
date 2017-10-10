@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051445981713024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 45.56, y: 5.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299dfb436f3f3cf459b098b109cec661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpSound: {fileID: 8300000, guid: d1a9b6a4581499f4693af25c8fde9cc1, type: 3}
   JumpMagnitude: 30
 --- !u!212 &212939222184771120
 SpriteRenderer:
@@ -109,7 +110,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 155540391
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300044, guid: 2c1f3142f24304c44b43fc60509a2f01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

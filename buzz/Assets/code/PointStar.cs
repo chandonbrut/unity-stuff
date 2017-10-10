@@ -4,6 +4,8 @@ using System.Collections;
 public class PointStar : MonoBehaviour, IPlayerRespawnListener
 {
 
+    public AudioClip CollectSound;
+
     public GameObject Effect;
 
     public void OnPlayerRespawnInThisCheckpoint(Checkpoint checkpoint, Player player)
@@ -16,6 +18,7 @@ public class PointStar : MonoBehaviour, IPlayerRespawnListener
         if (other.GetComponent<Player>() == null)
             return;
 
+        AudioSource.PlayClipAtPoint(CollectSound, gameObject.transform.position);
         Instantiate(Effect, transform.position, transform.rotation);
         gameObject.SetActive(false);
 

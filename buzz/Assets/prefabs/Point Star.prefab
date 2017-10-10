@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4814279831192118}
   - component: {fileID: 114523508383888488}
   - component: {fileID: 58795335657487556}
-  - component: {fileID: 114760183603335570}
+  - component: {fileID: 95106204445337378}
   m_Layer: 0
   m_Name: Point Star
   m_TagString: Untagged
@@ -51,8 +51,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615173335609006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.69, y: 8.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4848978533901714}
@@ -87,6 +87,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
   m_Radius: 0.61
+--- !u!95 &95106204445337378
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615173335609006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 391b461f6d2b1b944a35cba0f1575298, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114523508383888488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,19 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c8550e135c86547a1757d4bf906c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Effect: {fileID: 1825786372536380, guid: df1cc57effe3e65409e87f1287a7ef9a, type: 2}
---- !u!114 &114760183603335570
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615173335609006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37e6726a31f5614db3d94e5b2809c6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RescaleRatio: 26
+  CollectSound: {fileID: 8300000, guid: f57676c71503b704a8452c91a435075c, type: 3}
+  Effect: {fileID: 1170145247311640, guid: df1cc57effe3e65409e87f1287a7ef9a, type: 2}
 --- !u!212 &212308515117446444
 SpriteRenderer:
   m_ObjectHideFlags: 1
